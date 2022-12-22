@@ -909,13 +909,12 @@ if __name__ == '__main__':
 
 ## 项目链接
 
-<https://github.com/Git-lys/NN_Homework/tree/master>
+<https://github.com/Git-lys/NNHomework>
 <https://aistudio.baidu.com/aistudio/projectdetail/4516264>
 
 ## 参考文献
 
 <https://github.com/junxiaosong/AlphaZero_Gomoku>
-
 $$
 loss=(z-v)^2-\pi^T*log(p)+c||\theta||^2
 $$
