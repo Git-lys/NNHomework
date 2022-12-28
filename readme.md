@@ -30,10 +30,10 @@
 ![](http://5b0988e595225.cdn.sohucs.com/images/20171024/9e3bb5aca2634e7f8f19dae40bb0a101)
 
 * 策略价值网络的结构：由公共网络层、行动策略网络层和状态价值网络层构成。
-* 相关API可在网站查看<https://www.paddlepaddle.org.cn/documentation/docs/zh/api/index_cn.html#:~:text=API%20%E6%96%87%E6%A1%A3%20%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8%E9%A3%9E%E6%A1%A8%E6%A1%86%E6%9E%B6,%28PaddlePaddle%29%2C%20PaddlePaddle%20%E6%98%AF%E4%B8%80%E4%B8%AA%E6%98%93%E7%94%A8%E3%80%81%E9%AB%98%E6%95%88%E3%80%81%E7%81%B5%E6%B4%BB%E3%80%81%E5%8F%AF%E6%89%A9%E5%B1%95%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%EF%BC%8C%E8%87%B4%E5%8A%9B%E4%BA%8E%E8%AE%A9%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF%E7%9A%84%E5%88%9B%E6%96%B0%E4%B8%8E%E5%BA%94%E7%94%A8%E6%9B%B4%E7%AE%80%E5%8D%95%E3%80%82>  
-Preparation:
-1.基于神经网络的MCTS：
-一般的MCTS：给定一个棋面，进行N次模拟，主要搜索过程：选择、拓展、仿真、回溯
+* 相关API可在网站查看[PaddleAPI](https://www.paddlepaddle.org.cn/documentation/docs/zh/api/index_cn.html#:~:text=API%20%E6%96%87%E6%A1%A3%20%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8%E9%A3%9E%E6%A1%A8%E6%A1%86%E6%9E%B6,%28PaddlePaddle%29%2C%20PaddlePaddle%20%E6%98%AF%E4%B8%80%E4%B8%AA%E6%98%93%E7%94%A8%E3%80%81%E9%AB%98%E6%95%88%E3%80%81%E7%81%B5%E6%B4%BB%E3%80%81%E5%8F%AF%E6%89%A9%E5%B1%95%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%EF%BC%8C%E8%87%B4%E5%8A%9B%E4%BA%8E%E8%AE%A9%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF%E7%9A%84%E5%88%9B%E6%96%B0%E4%B8%8E%E5%BA%94%E7%94%A8%E6%9B%B4%E7%AE%80%E5%8D%95%E3%80%82)  
+  Preparation:
+  1.基于神经网络的MCTS：
+  一般的MCTS：给定一个棋面，进行N次模拟，主要搜索过程：选择、拓展、仿真、回溯
 * 第一步是选择(Selection):这一步会从根节点开始，每次都选一个“最值得搜索的子节点”，一般使用UCT选择分数最高的节点，直到来到一个“存在未扩展的子节点”的节点
 * 第二步是扩展(Expansion)，在这个搜索到的存在未扩展的子节点，加上一个没有历史记录的子节点，初始化子节点
 * 第三步是仿真(simulation)，从上面这个没有试过的着法开始，用一个简单策略比如快速走子策略（Rollout policy）走到底，得到一个胜负结果。快速走子策略一般适合选择走子很快可能不是很精确的策略。因为如果这个策略走得慢，结果虽然会更准确，但由于耗时多了，在单位时间内的模拟次数就少了，所以不一定会棋力更强，有可能会更弱。这也是为什么我们一般只模拟一次，因为如果模拟多次，虽然更准确，但更慢。
