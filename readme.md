@@ -915,6 +915,8 @@ if __name__ == '__main__':
 ## 参考文献
 
 <https://github.com/junxiaosong/AlphaZero_Gomoku>
+
+
 $$
 loss=(z-v)^2-\pi^T*log(p)+c||\theta||^2
 $$
