@@ -108,7 +108,7 @@ Code：`policy_value_net_paddlepaddle.py`
 
 ### 4训练
 
-主文件：train.py
+主文件：`train.py`
 
 ### 5 实际效果
 
