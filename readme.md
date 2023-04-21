@@ -130,7 +130,7 @@ Code：`policy_value_net_paddlepaddle.py`
 
 ## 项目链接
 
-<https://github.com/Git-lys/NNHomework>
+<https://github.com/Git-lys/NNHomework>  
 <https://aistudio.baidu.com/aistudio/projectdetail/4516264>
 
 ## 参考文献
