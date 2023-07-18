@@ -138,8 +138,3 @@ $$
 loss=(z-v)^2-\pi^T*log(p)+c||\theta||^2
 $$
 
-
-```plaintext
-"巧妙了使用MCTS搜索树和神经网络一起，通过MCTS搜索树优化神经网络参数，反过来又通过优化的神经网络指导MCTS搜索。"
-"It cleverly combines MCTS search tree and neural network together, using the MCTS search tree to optimize the neural network parameters, and then using the optimized neural network to guide MCTS search."
-```
