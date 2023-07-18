@@ -1,8 +1,7 @@
 # 基于AlphaZero的AI五子棋机器人
-
+中文 [英文](readme_en.md)
 ![](https://pic4.zhimg.com/80/v2-1320f6469f11f9d5b72cc9f8fb65ec6b_720w.webp)
 
-[TOC]
 
 ## 概述
 
