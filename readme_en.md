@@ -1,5 +1,7 @@
 # Based on AlphaZero, an AI Gomoku player
 [Chinese](readme.md) English
+
+
 ![](https://pic4.zhimg.com/80/v2-1320f6469f11f9d5b72cc9f8fb65ec6b_720w.webp)
 
 ## Overview
@@ -71,15 +73,17 @@ $$
 * For the Backpropagation part, the information of the new leaf node branch is accumulated and updated on the ancestor node branches. Starting from leaf node L and backpropagating to the root node, update the upper-level branch data in sequence:
 
 $$
+\displaylines{
 N(s_t, a_t) = N(s_t, a_t) + 1\\
 W(s_t, a_t) = W(s_t, a_t) + v\\
-Q(s_t, a_t) = \frac{W(s_t, a_t)}{N(s_t, a_t)}
+Q(s_t, a_t) = \frac{W(s_t, a_t)}{N(s_t, a_t)}}
 $$
 
 * After the search is completed, the model can select the MCTS move at the root node s.
-  $$
-  \pi(a|s) = \frac{N(s, a)^{\frac{1}{\tau}}}{\sum_b N(s, b)^{\frac{1}{\tau}}}
-  $$
+
+$$
+\pi(a|s) = \frac{N(s, a)^{\frac{1}{\tau}}}{\sum_b N(s, b)^{\frac{1}{\tau}}}
+$$
   
 
 $\tau$ is between 0 and 1. The closer it is to 1, the closer it is to the original MCTS sampling, and the closer it is to 0, the closer it is to a greedy strategy (the action with the maximum number of visits N). To avoid numerical abnormalities due to direct access to $\tau$, we can take the natural logarithm first and then use softmax to restore the probability.
@@ -113,7 +117,7 @@ Main File: `train.py`
 
 As mentioned earlier, enter the following command under the Jupyter Notebook Code:
 
-```
+```shell
 !pip install pygame
 # File Name
 %cd AlphaZero_Demo
