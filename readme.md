@@ -70,15 +70,17 @@ $$
 * 对于回溯部分 将新叶子节点分支的信息回溯累加到祖先节点分支上 从叶子节点L依次向根节点回溯，并依次更新上层分支数据：
 
 $$
+\displaylines{
 N(s_t,a_t)=N(s_t,a_t)+1\\
 W(s_t,a_t)=W(s_t,a_t)+v\\
-Q(s_t,a_t)=\frac{W(s_t,a_t)}{N(s_t,a_t)}
+Q(s_t,a_t)=\frac{W(s_t,a_t)}{N(s_t,a_t)}}
 $$
 
-* 完成搜索后，建立的模型可以在根节点s选择MCTS行棋分支
-  $$
-  \pi(a|s)=\frac{N(s,a)^{\frac{1}{\tau}}}{\sum_b N(s,b)^{\frac{1}{\tau}}}
-  $$
+* 完成搜索后，建立的模型可以在根节点s选择MCTS行棋分支  
+
+$$
+\pi(a|s)=\frac{N(s,a)^{\frac{1}{\tau}}}{\sum_b N(s,b)^{\frac{1}{\tau}}}
+$$
   
 
 $\tau$在0,1之间 越接近1表示越接近MCTS原始采样，越接近0表示越接近贪婪策略(最大访问次数N对应的动作) 基于直接访问\tau导致数值异常，可以先去自然对数，再通过softmax还原为概率
@@ -113,7 +115,7 @@ Code：`policy_value_net_paddlepaddle.py`
 
 正如前文所述 通过在Jupyter Notebook Code下输入如下指令
 
-```
+```shell
 !pip install pygame
 #文件名
 %cd AlphaZero_Demo
