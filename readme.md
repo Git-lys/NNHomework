@@ -130,8 +130,6 @@ Code：`policy_value_net_paddlepaddle.py`
 以上为本项目全部内容 适合初学者 网络没有多复杂 本质为AlphaZero算法 关于神经网络部分为卷积和全连接 激活函数采用reLU()
 
 ## 项目链接
-
-<https://github.com/Git-lys/NNHomework>  
 <https://aistudio.baidu.com/aistudio/projectdetail/4516264>
 
 ## 参考文献
